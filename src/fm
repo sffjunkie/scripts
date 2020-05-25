@@ -1,0 +1,4 @@
+#!/bin/sh
+DEFAULT_FILE_MANAGER="ranger"
+[ -z "$FILE_MANAGER" ] && FILE_MANAGER=${DEFAULT_FILE_MANAGER} && notify-send -t 2000 "FILE_MANAGER env variable not set - using ${DEFAULT_FILE_MANAGER}" || notify-send -t 1000 --urgency=low "Starting Music Player - ${FILE_MANAGER}"
+$FILE_MANAGER "$@"

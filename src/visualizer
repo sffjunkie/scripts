@@ -1,0 +1,4 @@
+#!/bin/sh
+DEFAULT_MUSIC_VISUALIZER='ncmpcpp -s visualizer'
+[ -z "$MUSIC_VISUALIZER" ] && MUSIC_VISUALIZER="$DEFAULT_MUSIC_VISUALIZER" && notify-send -t 2000 --urgency=critical  "MUSIC_VISUALIZER env variable not set - using $DEFAULT_MUSIC_VISUALIZER" || notify-send -t 1000 --urgency=low "Starting Music Player - $MUSIC_VISUALIZER"
+$MUSIC_VISUALIZER "$@"
